@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <style>
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .reviews-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .review-card {
+            background-color: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .reviewer-avatar {
+            width: 60px;
+            height: 60px;
+            background-color: #000000;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 1.2rem;
+        }
+
+        .reviewer-info {
+            flex: 1;
+        }
+
+        .reviewer-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .review-date {
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .review-content {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .review-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #000000;
+            padding-top: 15px;
+        }
+
+        .verified-badge {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .helpful-count {
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .review-card {
+                padding: 20px;
+            }
+            
+            .reviews-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reviews-container">
+        <h1 class="reviews-title">Customer Reviews</h1>
+        
+        <div class="reviews-grid">
+            <!-- Review Card 1 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">JD</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">John Doe</div>
+                        <div class="review-date">January 15, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-content">
+                    "Absolutely outstanding service! The quality exceeded my expectations and the delivery was lightning fast. 
+                    I've already recommended this to all my friends and will definitely be purchasing again."
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">42 people found this helpful</span>
+                </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">SM</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Sarah Miller</div>
+                        <div class="review-date">February 3, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="review-content">
+                    "Great product overall! The build quality is solid and it performs exactly as advertised. 
+                    Minor issue with packaging but customer service was quick to resolve it. Would buy again."
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">28 people found this helpful</span>
+                </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">RJ</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Robert Johnson</div>
+                        <div class="review-date">March 22, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-content">
+                    "Exceptional value for money! I've tried several competitors and this stands out significantly. 
+                    The attention to detail and customer support are top-notch. Highly recommended for anyone looking for quality."
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">56 people found this helpful</span>
+                </div>
+            </div>
+
+            <!-- Review Card 4 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">EW</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Emily Wilson</div>
+                        <div class="review-date">April 8, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★☆☆</div>
+                </div>
+                <div class="review-content">
+                    "Good product but could be better. The functionality is there but the user interface could use some improvements. 
+                    Decent for the price point, but I expected a bit more polish."
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">15 people found this helpful</span>
+                </div>
+            </div>
+
+            <!-- Review Card 5 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">MT</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Michael Taylor</div>
+                        <div class="review-date">May 17, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-content">
+                    "Absolutely blown away by the quality! This product has completely transformed my workflow. 
+                    The customer service team was incredibly helpful during setup. Worth every penny!"
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">67 people found this helpful</span>
+                </div>
+            </div>
+
+            <!-- Review Card 6 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">LD</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Lisa Davis</div>
+                        <div class="review-date">June 5, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="review-content">
+                    "Very satisfied with my purchase. The product arrived earlier than expected and works perfectly. 
+                    Only giving 4 stars because the instructions could be clearer for beginners."
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">33 people found this helpful</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

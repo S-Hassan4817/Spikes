@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spikes.com</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .reviews-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #a7a6a6;
+        }
+
+        .reviews-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .review-card {
+            background-color: #ffffff;
+            /* border: 2px solid #000000; */
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .reviewer-avatar {
+            width: 60px;
+            height: 60px;
+            background-color: #000000;
+            border-radius: 50%;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #ffffff;
+            font-size: 1.2rem;
+        }
+
+        .reviewer-info {
+            flex: 1;
+        }
+
+        .reviewer-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .review-date {
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        .review-content {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .review-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #000000;
+            padding-top: 15px;
+        }
+
+        .verified-badge {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .helpful-count {
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .review-card {
+                padding: 20px;
+            }
+            
+            .reviews-title {
+                font-size: 2rem;
+            }
+        }
+
+      
+
+    </style>
+  </head>
+  <body>
+
+    <!-- UPPER TEXT LINE  -->
+
+    <p class="upper-txt montserrat-uniquifier" style="font-weight: 300;">Free Delivery over orders above 2500rs</p>
+
+   <!-- NAVBAR STARTED -->
+
+    <header>
+      <div class="row">
+        <div class="col-12 ms-2 me-3 whole-body">
+          <nav
+            class="navbar d-flex navbar-expand-lg ms-2"
+          >
+            <div class="container-fluid">
+              <h1 class="navbar-brand pacifico-regular"><a href="index.html" style="color: black; text-decoration: none;">Spikes</a></h1>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-lg-0" style="margin-left: 35%">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active montserrat-uniquifier"
+                      style="font-size: 0.75rem; color: black; font-weight: 600"
+                      aria-current="page"
+                      href="/men.html"
+                      >Men</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link montserrat-uniquifier"
+                      style="font-size: 0.75rem; color: black; font-weight: 600"
+                      href="/women.html"
+                      >Women</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link montserrat-uniquifier"
+                      style="font-size: 0.75rem; color: black; font-weight: 600"
+                      href="/newarrivals.html"
+                      >New Arrivals</a
+                    >
+                  </li>
+                </ul>
+                <div class="group">
+                  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                    <g>
+                      <path
+                        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                      ></path>
+                    </g>
+                  </svg>
+                  <input placeholder="Search" type="search" class="input" />
+                </div>
+                <button class="btn"> Search </button>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVBAR ENDED  -->
+
+    <main class="whole-body">
+
+      <!-- CAROSUEL HTML STARTED  -->
+
+  <div id="carouselExampleIndicators" class="carousel slide rounded-carousel" >
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-items active">
+      <img src="/Images/hero1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-items">
+      <img src="/Images/hero2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-items">
+      <img src="/Images/hero3.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+      <!-- CAROUSEL HTML ENDED  -->
+
+<!-- HERO BANNER  -->
+  <div class="hero-banner">
+
+      <h1 class="hero-h1  montserrat-uniquifier">Shop Now and Save Rs.1500/.</h1>
+     <button class="animated-button montserrat-uniquifier">
+        <span>Shop Now !</span>
+        <span></span>
+     </button>
+
+     <button class="animated-button1 montserrat-uniquifier">
+        <span>New Arrivals</span>
+        <span></span>
+     </button>
+
+  </div>
+
+<!-- HERO BANNER ENDED  -->
+
+
+
+<!-- CARDS HTML -->
+
+<div class=" custom-cards ">
+  <div class="row ">
+    <div class= "col-lg-3 col-md-6 col-sm-12  d-flex">
+      <div  class="cd-img1  montserrat-uniquifier"  width="100%" alt="">
+      <button class="cd-button">New Arrivals</button>
+    </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 d-flex">
+      <div class="cd-img2 montserrat-uniquifier"  width="100%" alt="">
+    <button class="cd-button"> Men</button>
+    </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 d-flex">
+      <div class="cd-img3 montserrat-uniquifier"  width="100%" alt="">
+      <button class="cd-button"> Women</button>
+    </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-12 d-flex">
+      <div class="cd-img4 montserrat-uniquifier"  width="100%" alt="">
+        <button class="cd-button"> Sale</button>
+      </div>
+    </div>
+</div>
+
+<!-- CARDS HTML ENDED  -->
+
+
+ 
+
+  <!-- REVIEW PANEL  -->
+
+ <div class="reviews-container">
+        <h1 class="reviews-title">Customer Reviews</h1>
+        
+        <div class="reviews-grid">
+            <!-- Review Card 1 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">SJ</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Syed Jibran</div>
+                        <div class="review-date">January 15, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-content">
+                    "Absolutely outstanding service! The quality exceeded my expectations and the delivery was lightning fast. 
+                    I've already recommended this to all my friends and will definitely be purchasing again."
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">42 people found this helpful</span>
+                </div>
+            </div>
+
+            <!-- Review Card 2 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">SA</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Sara Ahmed</div>
+                        <div class="review-date">February 3, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="review-content">
+                    "Great product overall! The build quality is solid and it performs exactly as advertised. 
+                    Minor issue with packaging but customer service was quick to resolve it. Would buy again."
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">28 people found this helpful</span>
+                </div>
+            </div>
+
+            <!-- Review Card 3 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">FK</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Fatima Khan</div>
+                        <div class="review-date">March 22, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-content">
+                    "Exceptional value for money! I've tried several competitors and this stands out significantly. 
+                    The attention to detail and customer support are top-notch. Highly recommended for anyone looking for quality."
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">56 people found this helpful</span>
+                </div>
+            </div>
+
+            <!-- Review Card 4 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">NH</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Nehaal Hassan</div>
+                        <div class="review-date">April 8, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★☆☆</div>
+                </div>
+                <div class="review-content">
+                    "Good product but could be better. The functionality is there but the user interface could use some improvements. 
+                    Decent for the price point, but I expected a bit more polish."
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">15 people found this helpful</span>
+                </div>
+            </div>
+
+            <!-- Review Card 5 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">TS</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Tayyab Shah</div>
+                        <div class="review-date">May 17, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="review-content">
+                    "Absolutely blown away by the quality! This product has completely transformed my workflow. 
+                    The customer service team was incredibly helpful during setup. Worth every penny!"
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">67 people found this helpful</span>
+                </div>
+            </div>
+
+            <!-- Review Card 6 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-avatar">LD</div>
+                    <div class="reviewer-info">
+                        <div class="reviewer-name">Laiba Durrani</div>
+                        <div class="review-date">June 5, 2024</div>
+                    </div>
+                </div>
+                <div class="rating">
+                    <div class="stars">★★★★☆</div>
+                </div>
+                <div class="review-content">
+                    "Very satisfied with my purchase. The product arrived earlier than expected and works perfectly. 
+                    Only giving 4 stars because the instructions could be clearer for beginners."
+                </div>
+                <div class="review-footer">
+                    <span class="verified-badge">Verified Purchase</span>
+                    <span class="helpful-count">33 people found this helpful</span>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+  <!-- REVIEW PANEL ENDED  -->
+ </main>
+
+
+<!-- Footer -->
+
+<footer class="text-center text-lg-start text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3"></i>Company name
+          </h6>
+          <p>
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Products
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Angular</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">React</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Vue</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Laravel</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2021 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+<!-- Footer -->
+
+
+
+
+  
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
+</html>

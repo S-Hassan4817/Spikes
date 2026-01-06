@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spikes/Men.com</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+        }
+        
+        .section-header {
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .filter-link:hover,
+        .filter-link.active {
+            color: #000;
+        }
+        
+        .filter-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .product-card {
+            border: none;
+            transition: transform 0.3s ease;
+            background: transparent;
+            height: 350px;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .product-info {
+            text-align: center;
+        }
+        
+        .product-name {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: #000;
+        }
+        
+        .product-category {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .product-price {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #000;
+        }
+        
+        .color-options {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .color-swatch {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .filter-nav {
+                gap: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+        <!-- UPPER TEXT LINE  -->
+
+    <p class="upper-txt montserrat-uniquifier" style="font-weight: 300;">Free Delivery over orders above 2500rs</p>
+
+   <!-- NAVBAR STARTED -->
+
+    <header>
+      <div class="row">
+        <div class="col-12 ms-2 me-3">
+          <nav
+            class="navbar d-flex navbar-expand-lg ms-2"
+          >
+            <div class="container-fluid">
+              <h1 class="navbar-brand pacifico-regular"><a href="/index.html" style="color: black; text-decoration: none;">Spikes</a></h1>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-lg-0" style="margin-left: 35%">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active montserrat-uniquifier"
+                      style="font-size: 0.75rem; color: black; font-weight: 600"
+                      aria-current="page"
+                      href="/men.html"
+                      >Men</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link montserrat-uniquifier"
+                      style="font-size: 0.75rem; color: black; font-weight: 600"
+                      href="/women.html"
+                      >Women</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link montserrat-uniquifier"
+                      style="font-size: 0.75rem; color: black; font-weight: 600"
+                      href="/newarrivals.html"
+                      >New Arrivals</a
+                    >
+                  </li>
+                </ul>
+                <div class="group">
+                  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+                    <g>
+                      <path
+                        d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                      ></path>
+                    </g>
+                  </svg>
+                  <input placeholder="Search" type="search" class="input" />
+                </div>
+                <button class="btn"> Search </button>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVBAR ENDED  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Header Section -->
+        <section class="section-header">
+            <div class="container">
+                <h1 class="section-title montserrat-uniquifier" style="font-weight: 400;">Men's Shoes</h1>
+                <nav class="filter-nav montserrat-uniquifier">
+                    <a href="#" class="filter-link active ">All Shoes</a>
+                    <a href="#" class="filter-link">Runners</a>
+                    <a href="#" class="filter-link">Loungers</a>
+                    <a href="#" class="filter-link">Hikers</a>
+                    <a href="#" class="filter-link">Trail Runners</a>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Product Grid Section -->
+        <section class="product-section">
+            <div class="product-grid">
+                <!-- Product Card 1 -->
+                <div class="product-card">
+                    <img src="Images/shoe1.png" alt="White minimalist sneakers with clean design and natural materials" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name montserrat-uniquifier">Tree Runners</h3>
+                        <p class="product-category">Everyday Sneakers</p>
+                        <p class="product-price">Rs.13,000.</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card">
+                    <img src="Images/shoe2.png" alt="Charcoal gray wool loungers with comfortable design" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name montserrat-uniquifier">Wool Loungers</h3>
+                        <p class="product-category">Comfort Shoes</p>
+                        <p class="product-price">Rs.12,000.</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card">
+                    <img src="Images/shoe3.png" alt="Blue lightweight trail running shoes with rugged sole" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name montserrat-uniquifier">Trail Runners SWT</h3>
+                        <p class="product-category">Trail Running</p>
+                        <p class="product-price">Rs.15,000.</p>
+                        
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="product-card">
+                    <img src="/Images/shoe4.png" alt="Black waterproof hiking boots with sturdy construction" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name montserrat-uniquifier">Waterproof Hikers</h3>
+                        <p class="product-category">Hiking Boots</p>
+                        <p class="product-price">Rs.10,000.</p>
+                       
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="product-card">
+                    <img src="/Images/shoe5.png" alt="Beige casual sneakers made from sustainable materials" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name montserrat-uniquifier">Tree Dashers</h3>
+                        <p class="product-category">Running Shoes</p>
+                        <p class="product-price">Rs.9,000.</p>
+                        
+                    </div>
+                </div>
+
+                <!-- Product Card 6 -->
+                <div class="product-card">
+                    <img src="Images/shoe6.png" alt="Green sustainable running shoes with modern design" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-name montserrat-uniquifier">Tree Skippers</h3>
+                        <p class="product-category">Lightweight Runners</p>
+                        <p class="product-price">$105</p>
+                        <!-- <div class="color-options">
+                            <span class="color-swatch" style="background-color: #2e7d32;"></span>
+                            <span class="color-swatch" style="background-color: #ffffff; border: 1px solid #ddd;"></span>
+                            <span class="color-swatch" style="background-color: #212121;"></span>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script
+
+🎨 **Generating images based on descriptions...**
+
+✅ **Images generated successfully! Here's your updated content:**
+
